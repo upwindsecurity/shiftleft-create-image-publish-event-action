@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Upwind Security ShiftLeft ShiftLeft Scan Event Publish Event Action enables seamless integration of Docker image vulnerability scanning into your CI/CD workflows. This action notifies the Upwind Console of a published image, identifying the tag with the image.
+The Upwind Security ShiftLeft Scan Event Publish Event Action enables seamless integration of Docker image vulnerability scanning into your CI/CD workflows. This action notifies the Upwind Console of a published image, identifying the tag with the image.
 
 ## Prerequisites
 - Currently supported architectures: `linux/amd64`.
@@ -19,10 +19,11 @@ Define the following inputs in your workflow to configure the ShiftLeft actions:
 -	`docker_user` (optional): Username for authenticating to the Docker registry.
 -	`docker_password` (optional): Password for authenticating to the Docker registry.
 -	`pull_image` (optional): Boolean flag to determine if the image should be pulled. Set to false if the image is available locally. Default is true.
+- `upwind_uri` (optional): URI to be used to communicate with Upwind. This should be one of `upwind.io` (global - default) or `eu.upwind.io` (Europe)
 
 ## Usage
 
-To integrate the ShiftLeft scanning action into your GitHub workflow, include the following step:
+To integrate the ShiftLeft publishing action into your GitHub workflow, include the following step:
 
 ```
 - name: Upwind Security ShiftLeft Scanning
@@ -83,7 +84,7 @@ jobs:
           docker_image: 'your-docker-image:your-specified-version'
 ```
 
-This workflow triggers on pushes to the main branch, builds the Docker image, and then scans it for vulnerabilities using the CloudScanner action. The image does not need to be pulled because it is available locally via the Docker daemon. The
+This workflow triggers on pushes to the main branch, builds the Docker image, and then scans it for vulnerabilities using the CloudScanner action. The image does not need to be pulled because it is available locally via the Docker daemon.
 
 ## Troubleshooting
 -	Authentication Issues: Verify that your Upwind credentials are correct and have the necessary permissions.
