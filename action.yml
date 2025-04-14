@@ -27,7 +27,6 @@ inputs:
     required: false
   additional_registries:
     description: Comma-separated list of additional registries to associate with the scanned image, passed as a string
-    default: ""
     required: false
   debug:
     description: Enable debug logging
