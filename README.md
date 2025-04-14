@@ -19,6 +19,7 @@ Define the following inputs in your workflow to configure the ShiftLeft actions:
 -	`docker_user` (optional): Username for authenticating to the Docker registry.
 -	`docker_password` (optional): Password for authenticating to the Docker registry.
 -	`pull_image` (optional): Boolean flag to determine if the image should be pulled. Set to false if the image is available locally. Default is true.
+-   `additional_registries` (optional): Comma-separated list of additional registries to associate with the scanned image, passed as a string (String input)
 
 ## Usage
 
@@ -34,6 +35,7 @@ To integrate the ShiftLeft scanning action into your GitHub workflow, include th
     docker_user: ${{ secrets.DOCKER_USER }}
     docker_password: ${{ secrets.DOCKER_PASSWORD }}
     pull_image: false
+    additional_registries: `registry1,registry2`
 ```
 
 Ensure that sensitive information, such as `upwind_client_id`, `upwind_client_secret`, and `docker_password`, are stored securely using GitHub Secrets.
