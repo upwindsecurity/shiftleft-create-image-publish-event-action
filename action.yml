@@ -25,6 +25,10 @@ inputs:
     description: Public Upwind URI domain name
     default: upwind.io
     required: false
+  additional_registries:
+    description: Comma-separated list of additional registries to associate with the scanned image
+    default: ""
+    required: false
   debug:
     description: Enable debug logging
     default: false
@@ -70,5 +74,6 @@ runs:
           --docker-user="${{ inputs.docker_user }}" \
           --docker-password="${{ inputs.docker_password }}" \
           --debug=${{ inputs.debug }}  \
+          --additional-registries="${{ inputs.additional_registries}}" \
           --docker-pull=${{ inputs.pull_image }}
         echo "Info: image publish event sent"
