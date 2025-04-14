@@ -26,7 +26,7 @@ inputs:
     default: upwind.io
     required: false
   additional_registries:
-    description: Comma-separated list of additional registries to associate with the scanned image
+    description: Comma-separated list of additional registries to associate with the scanned image, passed as a string
     default: ""
     required: false
   debug:
