@@ -23,6 +23,7 @@ Define the following inputs in your workflow to configure the ShiftLeft actions:
 
 ## Usage
 
+
 To integrate the ShiftLeft scanning action into your GitHub workflow, include the following step:
 
 ```
